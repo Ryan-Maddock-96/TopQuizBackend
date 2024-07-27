@@ -55,6 +55,57 @@ app.get('/getUser', verifyToken, (req, res) => {
     res.json(userData)
 })
 
+app.get('/getQuizList', verifyToken, (req, res) => {
+  const list = [
+    {
+        "id": 1,
+        "name": "Quiz 1",
+        "description": "This is Quiz 1",
+        "points": 20,
+        "category": "Movies"
+    },
+    {
+        "id": 2,
+        "name": "Quiz 2",
+        "description": "This is Quiz 2",
+        "points": 20,
+        "category": "TV"
+    },
+    {
+        "id": 3,
+        "name": "Quiz 3",
+        "description": "This is Quiz 3",
+        "points": 20,
+        "category": "Gaming"
+    },
+    {
+        "id": 4,
+        "name": "Quiz 1",
+        "description": "This is Quiz 1",
+        "points": 20,
+        "category": "Movies"
+    },
+    {
+      "id": 5,
+        "name": "Quiz 2",
+        "description": "This is Quiz 2",
+        "points": 20,
+        "category": "Movies"
+    },
+    {
+      "id": 6,
+        "name": "Quiz 3",
+        "description": "This is Quiz 3",
+        "points": 20,
+        "category": "Music"
+    }
+  ]
+
+  res.json({
+    quizList: list
+  })
+})
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
